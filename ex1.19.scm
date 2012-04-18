@@ -5,10 +5,22 @@
   (cond ((= count 0) b)
         ((even? count) (fib-iter a 
 				 b
-				 <??> ; compute p’
-				 <??> ; compute q’ (/ count 2)))
+				 (+ (* p p) (* q q))
+				 (+ (* q q) (* 2 p q))
+				 (/ count 2)))
         (else (fib-iter (+ (* b q) (* a q) (* a p))
                         (+ (* b p) (* a q))
                         p
                         q
                         (- count 1)))))
+
+(fib 0)
+(fib 1)
+(fib 2)
+(fib 3)
+(fib 4)
+(fib 5)
+(fib 6)
+(fib 7)
+
+
